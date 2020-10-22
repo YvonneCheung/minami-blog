@@ -1,0 +1,32 @@
+// flex
+@mixin flex($dire:row,$just:center,$align:center,$flex:0 1 auto)
+  display: flex
+  flex-direction: $dire
+  justify-content: $just
+  align-items: $align
+  flex: $flex
+
+/* 宽高 */
+@mixin wh($width, $height)
+  width: $width
+  height: $height
+
+  //多行文字超出显示省略号
+@mixin ellipsisMultiline($number: 1)
+  display: -webkit-box
+  overflow: hidden
+  -webkit-box-orient: vertical
+  word-break: break-all
+  text-overflow: ellipsis
+  -webkit-line-clamp: $number
+
+//文字一行超出显示省略号
+@mixin ellipsis ()
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+
+//兼容IE透明度写法
+@mixin opacity($number: 0.5)
+  opacity: $number
+  filter: alpha(opacity=#{$number * 100})

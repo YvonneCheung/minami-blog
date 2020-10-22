@@ -1,0 +1,28 @@
+@import './mixin.sass'
+
+.x-main
+  background-color: #eee
+  @include wh(100%,100%)
+  @include flex($dire:column)
+  .x-container
+    @include flex($flex:1)
+
+  .x-navbar
+    background-color: #fff
+    @include wh(100%,60px)
+    @include flex($just:space-between)
+    .x-navbar-logo
+      white-space: nowrap
+    .x-navbar-items
+      @include wh(100%,100%)
+      @include flex($just:flex-end)
+      .x-navbar-item
+        cursor: pointer
+        padding: 0 20px
+        &:hover
+          color: red
+
+  .x-footer
+    background-color: #ccc
+    @include wh(100%,50px)
+    @include flex($dire:column)
