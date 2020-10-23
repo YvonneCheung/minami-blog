@@ -1,22 +1,34 @@
 {
   "menus": [
     {
-      "title": "首页"
+      "title": "首页",
+      "name":"Home",
+      "path":"/"
     },
     {
-      "title": "文章"
+      "title": "文章",
+      "name":"Article",
+      "path":"/article"
     },
     {
-      "title": "时光轴"
+      "title": "时光轴",
+      "name":"Timeline",
+      "path":"/timeline"
     },
     {
-      "title": "关于"
+      "title": "关于",
+      "name":"About",
+      "path":"/about"
     },
     {
-      "title": "友链"
+      "title": "友链",
+      "name":"Friendlink",
+      "path":"/friendlink"
     },
     {
-      "title": "留言"
+      "title": "留言",
+      "name":"Comment",
+      "path":"/comment"
     }
   ]
 }

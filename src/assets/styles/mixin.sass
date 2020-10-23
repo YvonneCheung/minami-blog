@@ -1,10 +1,11 @@
 // flex
-@mixin flex($dire:row,$just:center,$align:center,$flex:0 1 auto)
+@mixin flex($dire:row,$just:center,$align:center,$wrap:nowrap,$flex:0 1 auto)
   display: flex
   flex-direction: $dire
   justify-content: $just
   align-items: $align
-  flex: $flex
+  flex: $flex,
+  flex-wrap: $wrap
 
 /* 宽高 */
 @mixin wh($width, $height)

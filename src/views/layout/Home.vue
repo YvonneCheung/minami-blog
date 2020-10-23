@@ -14,7 +14,7 @@ import Footer from './Footer'
 
 export default {
   components: { 'x-navbar': Navbar, 'x-footer': Footer },
-  data () {
+  data() {
     return {}
   },
   methods: {}

@@ -8,7 +8,7 @@
 <script>
 import { RECORDS } from '@/config/config'
 export default {
-  data () {
+  data() {
     return {
       records: RECORDS
     }
