@@ -1,6 +1,7 @@
 @import './mixin.sass'
 @import './variable.sass'
 @import './animate.sass'
+@import './font.sass'
 
 // layout
 .x-main
@@ -8,16 +9,21 @@
   @include flex($dire:column)
 
   .x-container
+    @include wh(100%,100%)
     @include flex($flex:1 0 auto)
+    .x-wrapper
+      margin: 2rem
+      max-width: 800px
 
   .x-navbar
     z-index: 999
+    padding: .6rem 2rem
     background: transparent
-    transition: all 0.5s ease
+    transition: all .5s ease
     @include wh(100%,60px)
     @include flex($just:space-between)
     .x-navbar-logo
-      font-size: 2rem
+      font-size: 2.2rem
       font-family: Yesteryear
       white-space: nowrap
       cursor: pointer
@@ -25,7 +31,7 @@
       @include wh(300px,60px)
 
     .x-navbar-items
-      font-size: 0.9em
+      font-size: 1rem
       font-family: Yatra-One
       @include wh(100%,100%)
       @include flex($just:flex-end)
@@ -38,30 +44,19 @@
           color: $text-hover
 
   .x-footer
-    font-family: Yatra-One
+    font-size: 0.8rem
+    font-family: Yatra-One,san-serif
     @include wh(100%,50px)
     @include flex($dire:column)
 
-//home 首页
-.x-banner
-  margin-top: -60px
-  background-color: $background
-  @include flex
-  .x-banner-imgs
-    padding: 5em 4em
-    @include flex($wrap:wrap)
-    .x-banner-img
-      width: 400px
-      height: 314.29px
-    .x-img-1
-      background: url('../../assets/images/girl-looking.png') no-repeat center
-    .x-img-2
-      background: url('../../assets/images/girl-playing-tennis.png') no-repeat center
-    .x-img-3
-      background: url('../../assets/images/girl-riding-scooter.png') no-repeat center
-    .x-img-4
-      background: url('../../assets/images/girl-walking-with-pet.png') no-repeat center
-    .x-img-5
-      background: url('../../assets/images/girl-with-plant.png') no-repeat center
-    .x-img-6
-      background: url('../../assets/images/lady-employee-working.png')
+  .x-backtop
+    position: fixed
+    right: 2.4rem
+    bottom: 1.8rem
+    .icon-backtop
+      cursor: pointer
+      font-size: 2.8rem
+      &:hover
+        opacity: 0.8
+        transition: all .5s ease
+        transform: scale(1.2)

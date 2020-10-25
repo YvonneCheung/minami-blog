@@ -1,21 +1,39 @@
 <template>
   <div class="x-banner">
-    <ul class="x-banner-imgs">
-      <li class="x-banner-img x-img-1"></li>
-      <li class="x-banner-img x-img-2"></li>
-      <li class="x-banner-img x-img-3"></li>
-      <li class="x-banner-img x-img-4"></li>
-      <li class="x-banner-img x-img-5"></li>
-      <li class="x-banner-img x-img-6"></li>
-    </ul>
+    <div class="x-banner-imgs ">
+      <image-item v-for="index of 6"
+                  :key="index"></image-item>
+    </div>
   </div>
 </template>
 
 <script>
+import setBgImg from '@/utils/backgroundImg'
+import ImageItem from './components/ImageItem'
+
 export default {
+  components: { ImageItem },
   data() {
-    return {}
+    return {
+      backgroundImage: setBgImg()
+    }
   },
   methods: {}
 }
 </script>
+<style lang="sass" scoped>
+@import '@/assets/styles/mixin.sass'
+@import '@/assets/styles/variable.sass'
+
+.x-banner
+  overflow: auto
+  background-color: $background
+  @include flex
+  .x-banner-imgs
+    overflow: auto
+    padding: 5em 4em
+    @include flex($wrap:wrap)
+    .x-banner-img
+      width: 400px
+      height: 314.29px
+</style>

@@ -10,6 +10,12 @@ module.exports = {
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
+    eqeqeq: 'off',
+    indent: 'off',
+    'no-eval': 'off', // 禁止使用eval
+    'no-undef': 'off', // 不能有未定义的变量
+    'no-unused-vars': 'off',
+    "prefer-const":false
   },
   plugins: ['vue', 'prettier','stylelint-prettier'],
   overrides: [

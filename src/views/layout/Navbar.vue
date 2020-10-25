@@ -14,7 +14,7 @@
 <script>
 import menus from '@/mock/menu.json'
 export default {
-  data () {
+  data() {
     return {
       menus: menus.menus
     }
