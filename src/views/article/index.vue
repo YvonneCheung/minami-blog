@@ -23,7 +23,5 @@ export default {
 }
 </script>
 <style lang="sass" scoped>
-.x-wrapper
-  margin: 2rem
-  max-width: 800px
+
 </style>
