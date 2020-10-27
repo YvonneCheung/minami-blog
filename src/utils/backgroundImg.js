@@ -1,5 +1,5 @@
 
-const context = require.context('@/assets/images', true, /\.(png)$/)
+const context = require.context('@/assets/images/bgImg', true, /\.(png)$/)
 const images = context.keys().map((filename) => {
   return context(filename)
 })

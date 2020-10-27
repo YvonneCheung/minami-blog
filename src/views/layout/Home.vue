@@ -6,6 +6,7 @@
     </div>
     <x-footer></x-footer>
     <x-backtop></x-backtop>
+    <!-- <x-asider :drawer="isAsider"></x-asider> -->
   </div>
 </template>
 
@@ -13,11 +14,19 @@
 import Navbar from './Navbar'
 import Footer from './Footer'
 import BackTop from '@/components/BackTop'
+// import Asider from './components/Asider'
 
 export default {
-  components: { 'x-navbar': Navbar, 'x-footer': Footer, 'x-backtop': BackTop },
+  components: {
+    'x-navbar': Navbar,
+    'x-footer': Footer,
+    'x-backtop': BackTop
+    // 'x-asider': Asider
+  },
   data() {
-    return {}
+    return {
+      // isAsider: false
+    }
   },
   methods: {}
 }

@@ -1,23 +1,34 @@
 <template>
-  <div class="x-navbar">
-    <div class="x-navbar-logo"> Minami Shizuku</div>
-    <ul class="x-navbar-items">
-      <li v-for="(item, index) in menus"
-          :key="index"
-          class="x-navbar-item">
-        <router-link :to="item.path">{{ item.name }}</router-link>
-      </li>
-    </ul>
+  <div class="x-navbar animated fadeInDown" v-show="scrollTop < 120">
+    <div class="x-navbar-logo">
+      <router-link to="/">Minami Shizuku</router-link>
+    </div>
+    <!-- <i class="iconfont icon-more-line" @click="openSidebar"></i> -->
+    <navbar-link></navbar-link>
   </div>
 </template>
 
 <script>
-import menus from '@/mock/menu.json'
+import NavbarLink from './components/NavbarLink'
+
 export default {
+  components: { NavbarLink },
   data() {
     return {
-      menus: menus.menus
+      scrollTop: 0
     }
+  },
+  mounted() {
+    window.addEventListener(
+      'scroll',
+      () => {
+        this.scrollTop =
+          window.pageYOffset ||
+          document.documentElement.scrollTop ||
+          document.body.scrollTop
+      },
+      false
+    )
   },
   methods: {}
 }

@@ -1,11 +1,8 @@
 <template>
   <div class="x-wrapper">
-    <div v-for="(item,index) in timeline"
-         class="x-timeline"
-         :key="index">
-      <div class="x-timelin-img"
-           :style="backgroundImage"></div>
-      <div class="x-timeline-content">{{item.content}}</div>
+    <div v-for="(item, index) in timeline" class="x-timeline" :key="index">
+      <div class="x-timelin-img"></div>
+      <div class="x-timeline-content">{{ item.content }}</div>
     </div>
   </div>
 </template>
@@ -23,8 +20,6 @@ export default {
 }
 </script>
 <style lang="sass" scoped>
-@import '@/assets/styles/mixin.sass'
-
 .x-timeline
   padding: 2rem
   @include flex

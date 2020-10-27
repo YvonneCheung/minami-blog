@@ -1,15 +1,16 @@
 <template>
   <div class="x-post-item animated fadeInDown">
     <div class="x-post-title">
-      <h2>{{item.title}}</h2>
+      <h2 @click="$router.push(`/article/detail/${item.id}`)">
+        {{ item.title }}
+      </h2>
     </div>
     <div class="x-post-content">
-      <p>{{item.content}}</p>
-      <div class="x-post-image"
-           :style="backgroundImage"></div>
+      <p>{{ item.content }}</p>
+      <div class="x-post-image" :style="backgroundImage"></div>
     </div>
     <div class="x-post-footer">
-      <span>{{item.time}}</span>
+      <span>{{ item.time }}</span>
     </div>
   </div>
 </template>
@@ -40,24 +41,23 @@ export default {
 }
 </script>
 <style lang="sass" scoped>
-@import '@/assets/styles/mixin.sass'
-
 .x-post-item
   padding: 2rem
   .x-post-title
-    margin-bottom: 1.2rem
+    margin-bottom: 0.2rem
+    cursor: pointer
   .x-post-content
-    margin-bottom: 1.2rem
+    margin-bottom: 0.2rem
     @include flex
     p
       letter-spacing: 2px
       line-height: 2rem
-      font-size: 16px
+      font-size: 14px
       font-weight: 300
     .x-post-image
       margin-left: 30px
       @include wh(400px,160px)
   .x-post-footer
     font-size: 12px
-    color: #bbb
+    color: $textSub
 </style>

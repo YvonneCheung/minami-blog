@@ -28,7 +28,12 @@ const routes = [
         path: '/friendlink',
         name: 'friendlink',
         component: () => import('@/views/friend/index.vue')
+      },{
+        path: '/article/detail/:id',
+        name: 'articleDetail',
+        component: () => import('@/views/article/detail.vue')
       }
+
     ]
   }
 ]

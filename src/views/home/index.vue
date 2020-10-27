@@ -1,8 +1,7 @@
 <template>
   <div class="x-banner">
     <div class="x-banner-imgs ">
-      <image-item v-for="index of 6"
-                  :key="index"></image-item>
+      <image-item v-for="index of 6" :key="index"></image-item>
     </div>
   </div>
 </template>
@@ -21,10 +20,8 @@ export default {
   methods: {}
 }
 </script>
-<style lang="sass" scoped>
-@import '@/assets/styles/mixin.sass'
-@import '@/assets/styles/variable.sass'
 
+<style lang="sass" scoped>
 .x-banner
   overflow: auto
   background-color: $background
