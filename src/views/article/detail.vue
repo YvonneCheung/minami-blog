@@ -1,7 +1,7 @@
 <template>
   <div class="x-wrapper">
-    <h2>{{ postDetail.title }}</h2>
-    <div>{{ postDetail.content }}</div>
+    <h1 class="post-title">{{ postDetail.title }}</h1>
+    <div class="post-content">{{ postDetail.content }}</div>
   </div>
 </template>
 
@@ -9,12 +9,12 @@
 import post from '@/mock/post.json'
 
 export default {
-  data() {
+  data () {
     return {
       postDetail: {}
     }
   },
-  mounted() {
+  mounted () {
     this.postDetail = post.post.filter(
       item => item.id == this.$route.params.id
     )[0]
@@ -24,6 +24,9 @@ export default {
 </script>
 <style lang="sass" scoped>
 .x-wrapper
-  padding: 2rem
   @include flex($dire:column)
+  .post-title
+    margin-bottom: 2rem
+  .post-content
+    line-height: 2rem
 </style>
