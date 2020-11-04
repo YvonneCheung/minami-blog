@@ -1,16 +1,17 @@
 <template>
   <div class="x-post-item animated fadeInDown">
     <div class="x-post-title">
-      <h2 @click="$router.push(`/article/detail/${item.id}`)">
-        {{ item.title }}
+      <h2 @click="$router.push(`/article/detail/${post.id}`)">
+        {{ post.title }}
       </h2>
     </div>
     <div class="x-post-content">
-      <p>{{ item.content }}</p>
-      <div class="x-post-image" :style="backgroundImage"></div>
+      <p>{{ post.content }}</p>
+      <div class="x-post-image"
+           :style="backgroundImage"></div>
     </div>
     <div class="x-post-footer">
-      <span>{{ item.time }}</span>
+      <span>{{ post.time }}</span>
     </div>
   </div>
 </template>
@@ -23,19 +24,21 @@ export default {
   props: {
     item: {
       type: Object,
-      default: () => {}
+      default: () => { }
     }
   },
-  data() {
+  data () {
     return {
+      post: {},
       backgroundImage: setBgImg()
     }
   },
   watch: {},
   computed: {},
-  created() {},
-  mounted() {
-    this.item.content = this.item.content.substring(0, 100) + '...'
+  created () { },
+  mounted () {
+    this.post = JSON.parse(JSON.stringify(this.item))
+    this.post.content = this.post.content.substring(0, 100) + '...'
   },
   methods: {}
 }
